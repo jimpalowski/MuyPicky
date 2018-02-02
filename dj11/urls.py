@@ -17,12 +17,18 @@ from django.contrib import admin
 from django.conf.urls import url
 from django.views.generic import TemplateView
 
-from restraunts.views import restraunt_listview
+from restraunts.views import (
+	RestrauntListView,
+	restraunt_listview,
+	RestrauntDetailView,
+	)
 
 urlpatterns = [
    url('^admin/', admin.site.urls),
    url('^$', TemplateView.as_view(template_name='home.html')),
-   url('^restraunts/$', restraunt_listview),
+   url('^restraunts/$', RestrauntListView.as_view()),
+   url('^restraunts/(?P<slug>[\w-]+)/$', RestrauntDetailView.as_view()),
+   #url('^restraunts/asian/$', AsianFusionRestrauntListView.as_view()),
    url('^about/$', TemplateView.as_view(template_name='about.html')),
    url('^contact/$', TemplateView.as_view(template_name='contact.html')),
 ]
