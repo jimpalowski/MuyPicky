@@ -11,6 +11,11 @@ from .models import RestrauntLocation
 
 
 def restraunt_createview(request):
+	if request.method == "GET":
+		print("get data")
+	if request.method == "POST":
+		print("post data")
+		print(request.POST)	
 	template_name = 'restraunts/form.html'
 	context = {}
 	return render(request, template_name, context)
@@ -27,7 +32,7 @@ def restraunt_listview(request):
 	return render(request, template_name, context)
 
 
-def restraunt_detailview(request, id):
+def restraunt_detailview(request, slug):
 	template_name = 'restraunts/restraunts_detail.html'
 	obj = RestrauntLocation.objects.get(slug=slug)
 	context = {
