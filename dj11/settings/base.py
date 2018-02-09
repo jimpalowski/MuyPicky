@@ -38,6 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+
+    'profiles',
+    'menus',
     'restraunts',
 ]
 
@@ -52,6 +55,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'dj11.urls'
+LOGIN_URL = '/abc/'
+
 
 TEMPLATES = [
     {
