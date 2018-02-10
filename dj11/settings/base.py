@@ -27,6 +27,18 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+EMAIL_HOST = 'stmp.gmail.com'
+EMAIL_HOST_USER = 'youremail@gmail.com'
+EMAIL_HOST_PASSWORD = 'yourpassword'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = 'My Name <you@email.com>'
+
+ADMINS = (
+
+    ('You', 'you@email.com')
+
+    )
 
 # Application definition
 
@@ -39,8 +51,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
 
-    'profiles',
+    
     'menus',
+    'profiles',
     'restraunts',
 ]
 
@@ -125,3 +138,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+LOGOUT_REDIRECT_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
